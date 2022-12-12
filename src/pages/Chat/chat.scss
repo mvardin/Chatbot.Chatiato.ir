@@ -1,0 +1,82 @@
+.Home_wrapper {
+  @apply relative h-screen w-full;
+  .messages_screen {
+    @apply relative w-full p-6 pb-0 overflow-y-auto flex-1;
+    ul {
+      @apply space-y-2;
+      li {
+        @apply flex;
+        > .inner_message {
+          @apply relative max-w-xl px-4 py-2 rounded shadow;
+        }
+        &.my_message {
+          @apply justify-end;
+          > .inner_message {
+            @apply bg-main text-white;
+          }
+        }
+        &.bot_message {
+          @apply justify-start gap-1;
+          .avatar {
+            @apply w-10 h-10 rounded-full overflow-hidden;
+            img {
+              @apply w-full h-auto m-auto;
+            }
+          }
+          > .inner_message {
+            @apply bg-white text-gray-700;
+          }
+        }
+        .scaling-dots {
+          display: grid;
+          height: 10px;
+          grid-gap: 5px;
+          grid-template-columns: repeat(5, 10px);
+          @keyframes scaling-dots {
+            0%,
+            100% {
+              transform: scale(0);
+            }
+            40%,
+            60% {
+              transform: scale(1);
+            }
+          }
+          div {
+            @apply bg-main rounded-full;
+            animation: scaling-dots 1s infinite ease backwards;
+            height: 8px;
+            width: 8px;
+            &:nth-child(1) {
+              animation-delay: 0.1s;
+            }
+            &:nth-child(2) {
+              animation-delay: 0.2s;
+            }
+            &:nth-child(3) {
+              animation-delay: 0.3s;
+            }
+            &:nth-child(4) {
+              animation-delay: 0.4s;
+            }
+            &:nth-child(5) {
+              animation-delay: 0.5s;
+            }
+          }
+        }
+      }
+    }
+  }
+  .chat_box {
+    @apply flex items-center justify-between w-full p-3 border-t border-gray-300;
+    input {
+      @apply block w-full py-2 pl-4 mx-3 bg-white rounded-full outline-none 
+      focus:ring-2 focus:ring-main transition-all;
+    }
+    button svg {
+      @apply w-8 h-8 text-main origin-center transform rotate-90;
+      shape-rendering: auto;
+    }
+  }
+}
+

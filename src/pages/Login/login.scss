@@ -1,0 +1,33 @@
+.login_container {
+  @apply p-20 flex justify-start items-end md:items-center relative 
+  w-full h-screen bg-no-repeat bg-left-top md:bg-center bg-cover 
+  bg-[url("../../assets/images/loginBg_mobile.png")] md:bg-[url("../../assets/images/loginBg.png")];
+  .form {
+    @apply flex flex-col items-center justify-center m-auto md:m-[unset]
+    py-9 rounded-xl text-white gap-5 w-[90%] max-w-[400px] 2xl:max-w-[450px];
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10px );
+    h2 {
+      @apply text-xl 2xl:text-2xl font-bold;
+    }
+    button{
+      @apply bg-main text-white p-2 rounded-md text-sm 2xl:text-base px-5 w-3/4;
+    }
+  }
+  .input_wrapper {
+    @apply relative flex flex-col items-start justify-center w-3/4;
+    label {
+      @apply text-sm 2xl:text-base;
+    }
+    input {
+      @apply w-full px-2 py-1 rounded-sm text-gray-700 outline-none border-2;
+      &.invalid {
+        @apply border-error ring-opacity-70;
+      }
+    }
+    .text_error{
+      @apply text-error text-sm mt-1 animate-pulse;
+    }
+  }
+}
